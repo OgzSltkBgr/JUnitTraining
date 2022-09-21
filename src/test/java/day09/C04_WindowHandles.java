@@ -45,7 +45,7 @@ public class C04_WindowHandles {
         driver.switchTo().window(ListAdi.get(1)) methodu kullaniriz
          */
 
-        List<String> windowList = new ArrayList<String>(driver.getWindowHandles());
+        List<String> windowList = new ArrayList<>(driver.getWindowHandles());
         System.out.println("Window Handle Değerleri = "+ windowList);
         driver.switchTo().window(windowList.get(1));
 

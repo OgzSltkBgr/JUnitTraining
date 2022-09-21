@@ -33,9 +33,6 @@ public class C01_Iframe {
     // https://the-internet.herokuapp.com/iframe adresine gidin.
     // Bir metod olusturun: iframeTest
 
-
-
-    //
         driver.get("https://the-internet.herokuapp.com/iframe");
 
         //  ○ “An IFrame containing….” textinin erisilebilir oldugunu test edin ve konsolda yazdirin.
