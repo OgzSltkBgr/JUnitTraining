@@ -42,7 +42,7 @@ public class C03_DeleteExcel {
          */
         FileOutputStream fos = new FileOutputStream(dosyaYolu);
         workbook.write(fos);
-        System.out.println(cell.toString());
+        //System.out.println(cell.toString());
 
 
     }

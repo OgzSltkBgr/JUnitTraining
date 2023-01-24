@@ -57,52 +57,57 @@ Popup mesajini yazdirin
          */
         //"http://webdriveruniversity.com/IFrame/index.html" sayfasina gidin
         driver.get("http://webdriveruniversity.com/IFrame/index.html");
+        Thread.sleep(3000);
 
         //"Our Products" butonuna basin
-
         WebElement ourProductsFrame=driver.findElement(By.cssSelector("#frame"));
         driver.switchTo().frame(ourProductsFrame);
         driver.findElement(By.xpath("//*[text()='Our Products']")).click();
-
+        Thread.sleep(3000);
 
         //"Cameras product"i tiklayin
         driver.findElement(By.xpath("(//p)[2]")).click();
+        Thread.sleep(3000);
 
         //Popup mesajini yazdirin
         WebElement popUp=driver.findElement(By.xpath("//*[@class='modal-body']"));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='modal-body']")));
+        wait.until(ExpectedConditions.visibilityOf(popUp));
+        Thread.sleep(3000);
 
         System.out.println("popUp.getText() = " + popUp.getText());
 
         //"close" butonuna basin
         driver.findElement(By.xpath("//*[text()='Close']")).click();
+        Thread.sleep(3000);
 
         //"WebdriverUniversity.com (IFrame)" linkini tiklayin
         driver.switchTo().defaultContent();
         driver.findElement(By.xpath("//*[text()='WebdriverUniversity.com (IFrame)']")).click();
+        Thread.sleep(3000);
 
         //"http://webdriveruniversity.com/index.html" adresine gittigini test edin
         String actualURL=driver.getCurrentUrl();
         String expectedURL="http://webdriveruniversity.com/index.html";
         Assert.assertEquals(expectedURL,actualURL);
+        Thread.sleep(3000);
 
     }
     @Test
     public void test3() {
         /*
         Ödev 3
-1."http://webdriveruniversity.com/" adresine gidin
-2."Login Portal" a  kadar asagi inin
-3."Login Portal" a tiklayin
-4.Diger window'a gecin
-5."username" ve  "password" kutularina deger yazdirin
-6."login" butonuna basin
-7.Popup'ta cikan yazinin "validation failed" oldugunu test edin
-8.Ok diyerek Popup'i kapatin
-Ilk sayfaya geri donun
-Ilk sayfaya donuldugunu test edin
-   */
+        1."http://webdriveruniversity.com/" adresine gidin
+        2."Login Portal" a  kadar asagi inin
+        3."Login Portal" a tiklayin
+        4.Diger window'a gecin
+        5."username" ve  "password" kutularina deger yazdirin
+        6."login" butonuna basin
+        7.Popup'ta cikan yazinin "validation failed" oldugunu test edin
+        8.Ok diyerek Popup'i kapatin
+        Ilk sayfaya geri donun
+        Ilk sayfaya donuldugunu test edin
+           */
         //1."http://webdriveruniversity.com/" adresine gidin
 
         //2."Login Portal" a  kadar asagi inin
